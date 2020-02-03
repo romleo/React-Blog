@@ -14,7 +14,7 @@ const Header = (props) => {
         <a href="#">Contact US</a>
      </nav>
      <div>
-       sociala Media links
+       social Media links
      </div>
     </header>
    )
