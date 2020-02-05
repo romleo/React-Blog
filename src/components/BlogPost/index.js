@@ -10,7 +10,7 @@ import Card from '../UI/Card';
 const BlogPost = (props) => {
   return(
 
-      <Card>
+      <Card sylle={{widht:'70%'}}>
           Post about FoldScope here
      </Card>
     

@@ -1,16 +1,20 @@
 import React from 'react';
 import './style.css';
+import Card from '../UI/Card';
 
 /**
 * @author
 * @function Sidebare
 **/
 
-const Sidebare = (props) => {
+const Sidebar = (props) => {
   return(
-    <div>Sidebare</div>
+
+    <Card style={{widht:'27%'}}>
+        Sidebar
+    </Card>
    )
 
  }
 
-export default Sidebare
+export default Sidebar
