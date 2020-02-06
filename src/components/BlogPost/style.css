@@ -1,4 +1,13 @@
-.blogPos{
-    width: 70% ;
-    background-color: #fff;
+.blogPostConteiner{
+  width: 70% ;
+  background-color: #fff;
+  }
+  .blogHeader{
+    text-align: center; 
+  }
+  .postTitle{
+    letter-spacing:0.5px;
+    text-transform:capitalize;
+    font-size:30px;
+    margin: 0;
   }
