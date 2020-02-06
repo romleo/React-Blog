@@ -9,9 +9,12 @@ import Card from '../UI/Card';
 
 const Sidebar = (props) => {
   return(
-    <Card width='27%'>
-      Sidebar
-    </Card>
+    <div className="sidebarConteiner">
+     <Card>
+        Sidebar
+     </Card>
+    </div>
+  
    )
 
  }

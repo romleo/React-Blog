@@ -16,6 +16,13 @@ const BlogPost = (props) => {
           <h1 className="postTitle">Post about FoldScope here</h1>
           <span className="postedBy">posted onFebruary 06.2020 by"some author" Blogging Tips</span>
        </div>
+        <div className="postImageConteiner">
+          <img src={require('../../blogPostImages/memories-from.jpg')} alt="Post Image"/>
+
+
+        </div>
+
+
       </Card>
     </div>
    )
