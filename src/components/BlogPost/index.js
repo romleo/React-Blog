@@ -14,10 +14,16 @@ const BlogPost = (props) => {
         <div className="blogHeader">
           <span className="blogCategory">Featured</span>
           <h1 className="postTitle">Post about FoldScope here</h1>
-          <span className="postedBy">posted onFebruary 06.2020 by"some author" Blogging Tips</span>
+          <span className="postedBy">posted on February 06.2020 by"some author" Blogging Tips</span>
        </div>
         <div className="postImageConteiner">
-          <img src={require('../../blogPostImages/memories-from.jpg')} alt="Post Image"/>
+          <img src={require('../../blogPostImages/foldScopething.jpeg')} alt="Post Image"/>
+
+          <div className="postContent">
+            <h3>Post Title</h3>
+            <p>lorem ins</p>
+
+          </div>
 
 
         </div>

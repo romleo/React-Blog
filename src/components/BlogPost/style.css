@@ -22,10 +22,11 @@
     font-style: italic;
     padding: 10px 0;
     display: block;
+    color: #6c6c6c;
   }
   .postImageConteiner{
     width: 100%;
-    padding: 5px;
+    padding: 10 px;
     box-sizing: border-box;
   }
   .postImageConteiner img{
