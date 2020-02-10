@@ -1,6 +1,7 @@
-import React from 'react';
+import React ,{useState,useEffect}from 'react';
 import './style.css';
 import Card from '../UI/Card';
+import blogPost from '../../data/blog.json'
 
 /**
 * @author
@@ -8,6 +9,19 @@ import Card from '../UI/Card';
 **/
 
 const Sidebar = (props) => {
+
+  const [posts,setPost]=useState([]);
+
+  useEffect(()=>{
+   
+   const posts = blogPost.data ;
+   setPost(posts);
+
+},posts);
+ 
+
+
+
   return(
     <div className="sidebarConteiner">
      <Card style={{marginBottom:'20px',padding:'20px',boxSizing:'border-box'}}>
@@ -34,25 +48,28 @@ const Sidebar = (props) => {
       </div> 
 
       <div className="recentPost">
-        <div className="recentPost">
-          <h3>Post Title</h3>
-          <span>Jenuary 21,2020</span>
-        </div>
+
+        {
+          posts.map(post =>{
+            return(
+             <div className="recentPost">
+               <h3>{post.blogTitle}</h3>
+               <span>{post.postedOn}</span>
+            </div>
+
+
+            );
+          })
+        }
+        
 
         
-        <div className="recentPost">
-          <h3>Post Title</h3>
-          <span>Decenber 25,2019</span>
-        </div>
+       
 
       </div>
 
      </Card>
-
-
-
-
-    </div>
+   </div>
   
    )
 
