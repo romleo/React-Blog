@@ -9,7 +9,7 @@ import './style.css';
 const Logo = (props) => {
   return(
     <div className="logo">
-     <a href="#">Roman Dubinetc</a>
+     <a href="#">Fold Scope</a>
     </div>
    )
 
