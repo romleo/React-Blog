@@ -14,7 +14,7 @@ const Post = (props) => {
   return(
     <section className="conteiner">
       <BlogPost {...props}/>
-      <Sidebare/>
+      <Sidebare {...props}/>
     </section>
    )
 
