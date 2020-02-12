@@ -1,35 +1,64 @@
- import React from 'react';
+import React from 'react';
 import './style.css';
 import Card from '../../components/UI/Card';
+import Sidebar from '../../components/Sidebar';
+import RecentPosts from './RecentPosts';
 
-const Home = props =>{
+import blogData from '../../data/blog.json';
+import Layout from '../../components/Layout';
 
-    const gallaryHeight = 450;
-    const gallaryStyle = {
-      height :gallaryHeight +'px',
-      overflow:'hiden'
-    }
-
-    return(
-    <div>
-      <Card>
-        <div className="gallaryPost" style={gallaryStyle}>
-        <section style={{width:'70%'}}>
-          <div>
-            <img scr={"https://images.squarespace-cdn.com/content/v1/57bccd1f3e00bea28d5766aa/1508967280636-MG4U0E41Q77RHSCB74NJ/ke17ZwdGBToddI8pDm48kO7Rg1Gpu728H4UqxUIfecJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PICj5SdZHY9KUswDgTH3eH8sP5PrkY15Dr7CE2CPSRiTEKMshLAGzx4R3EDFOm1kBS/IMG_0556+2.jpg"}alt=""/>
-          </div>
-        </section>
-        <section style={{width:'30%'}}>
-        <div>
-            <img scr={"https://images.squarespace-cdn.com/content/v1/57bccd1f3e00bea28d5766aa/1508967280636-MG4U0E41Q77RHSCB74NJ/ke17ZwdGBToddI8pDm48kO7Rg1Gpu728H4UqxUIfecJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PICj5SdZHY9KUswDgTH3eH8sP5PrkY15Dr7CE2CPSRiTEKMshLAGzx4R3EDFOm1kBS/IMG_0556+2.jpg"}alt=""/>
-          </div>
-        </section>
+const SideImage = props => {
+    return (
+        <div style={{ height: `${props.height}px`  }}>
+            <img src={props.src} alt="" />
         </div>
-
-      </Card>
-    </div>
-
-          
     );
 }
+
+const ImageGallary = props => (
+        <div className="gallaryPost" style={props.gallaryStyle}>
+                <section style={{ width: props.largeWidth }}>
+                    <div className="mainImageWrapper">
+                        <img src={require('../../blogPostImages/' + props.imagesArray[1])} alt="" />
+                    </div>
+                </section>
+                <section className={"sideImageWrapper"} style={{ width: props.smallWidth }}>
+                    {
+                        props.imagesArray.map(image => 
+                            <SideImage 
+                                height={props.sideImageHeight}
+                                src={require('../../blogPostImages/' + image)}
+                                alt="" />
+                        )
+                    }
+                </section>
+        </div>
+);
+
+const Home  = props => {
+    const gallaryHeight = 450;
+    const gallaryStyle = {
+        height: gallaryHeight+'px',
+        overflow: 'hidden'
+    }
+    const sideImageHeight = gallaryHeight / 3;
+   const imgAr = blogData.data.map(post => post.blogImage)
+    return (
+        <div>
+            <Card>
+                <ImageGallary 
+                            largeWidth="70%"
+                            smallWidth="30%"
+                            sideImageHeight={sideImageHeight}
+                            gallaryStyle={gallaryStyle}
+                            imagesArray={imgAr}
+                        />
+            </Card>
+                <Layout>
+                    <RecentPosts style={{width: '70%'}}/>
+                </Layout>
+        </div>
+    );
+}
+
 export default Home;
