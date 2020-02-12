@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import './style.css';
 import Card from '../../components/UI/Card';
 import Sidebar from '../../components/Sidebar';
