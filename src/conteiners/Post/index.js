@@ -3,6 +3,7 @@ import './style.css';
 import Card from '../../components/UI/Card';
 import BlogPost from '../../components/BlogPost';
 import Sidebare from '../../components/Sidebar';
+import Layout from '../../components/Layout';
 
 /**
 * @author
@@ -12,12 +13,13 @@ import Sidebare from '../../components/Sidebar';
 const Post = (props) => {
   console.log(props);
   return(
-    <section className="conteiner">
+    
+      <Layout>
       <BlogPost {...props}/>
-      <Sidebare {...props}/>
-    </section>
+      </Layout>
+    
    )
 
  }
 
-export default Post
+export default Post;
