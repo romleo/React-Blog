@@ -9,19 +9,18 @@ import Sidebar from '../Sidebar';
 
 const Layout = (props) => {
   return(
-    <div>
+    <React.Fragment>
       <div className ="conteiner">
       {props.children}
       <Sidebar/>
+      </div>
 
-    </div>
 
-
-    <div>
+     < div>
       <h1>THIS IS FOOTER FOR ALL PAGES </h1>
-    </div>
+     </div>
 
-    </div>
+   </React.Fragment>
       
       
   

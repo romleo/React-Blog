@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
-import Card from '../../components/UI/Card';
+
 import BlogPost from '../../components/BlogPost';
-import Sidebare from '../../components/Sidebar';
+
 import Layout from '../../components/Layout';
 
 /**
